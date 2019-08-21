@@ -1,0 +1,62 @@
+-- Clase 3 master 20 de agosto -- 
+
+Algoritmo de perceptron
+
+x_1\w_21
+	\w_2
+	 ----  sum() --- actFun()--> y = stepFun( (w^T) * x + b)
+	/		  ||b
+x_n/w_n		  ||+1
+
+b = bias / sesgo
+
+y = stepFun(sum(w_i*x_i+b , )) where  w_i,x_i e R
+
+stepFun = (val) => return  val > 0  ? 1 : 0
+signFun = (val) => return  val > 0  ? 1 : -1
+
+W = [w_1,w_2, ... , w_n]  X = [x_1, x_2, ... , x_n]
+
+
+--------------------------------------------------------------------
+
+w_1*x_1 + w_2*x_2 + b  = 0
+
+sum( w_i*x_i + b ) = 0
+
+w_1*x + w_2*y + b  = 0 <- formula general de la línea
+
+y = - w_1/w_2 * x - b/w_2 <- Punto pentiente
+
+L  = {(x,y) | a*x + b*y + c = 0 }
+
+Inecuación ya no representa la línea, sino los que están sobre la línea
+	w_1*x + w_2*y + b > 0 <- formula general de la línea
+
+Inecuación ya no representa la línea, sino los que están debajo de la línea
+	w_1*x + w_2*y + b < 0 <- formula general de la línea
+
+Esta neurona artificial es una línea  o un hiperplano el cual es un clasificador de dos opciones
+
+----------------------------------------------
+
+Perceptron (Rosenblatt, 1958): Es un algoritmo de aprendizaje.
+
+
+Rosenblatt (psicólogo) inventó el algoritmo para hacer investigaciones sobre el cerebro 
+
+Considerar los datos:
+	{ (x^(1),y^(2), ... , x^(p),y^(p)  ) } => x^(i) e R^n, y e {-1, 1}
+
+Algoritmo del perceptron: 
+	rand_init(Vector<W,n>, b, [-1, 1])
+
+	while converge:
+		for i in {1,2, ... , p}:
+			^y = actFun(w^T*x^(i) + b) <- neurona // etha in R  llamado factor de aprendizaje
+			w <- w + etha(*y^(i) - ^y(i))* x^(i )
+			b <- b + etha(*y^(i) - ^y(i))
+		end
+	end
+
+perceptron solo resuelve problemas linealmente separable
