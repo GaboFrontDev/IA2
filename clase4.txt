@@ -1,0 +1,88 @@
+-- Clase 4 22 de agosto -- 
+
+w = [-2.5, 1.75] 
+b = 0
+etha = 0.5
+
+
+80% del set de datos
+training_set = [
+	[[1,1], 1],
+	[[-.5,1], -1],
+	[[3,1], 1],
+	[[-2,1], -1],
+]
+
+20% del set de datos
+test_set = [
+	[[-1,-1], -1],
+	[[2,1], 1]
+]
+Primer Iteración
+^y_1 = fun_act( reduce(w)training_set[0][0] + 0 ) = -1 Incorrecto
+
+w = w + etha * (y_1 - ^y_1) * training_set[0][0]  || w = [-1.5, 2.75] 
+w = [-1.5, 2.75] 
+b = 0 + 0.5 (1 - (-1)) = 1
+
+Segunda Iteración
+^y_2 = fun_act( w * training_set[1][0] + 1 ) = 1 Incorrecto
+
+w = w + etha * (y_2 - ^y_2) * training_set[1][0] || w = [-1,1.75]
+b = 1 + 0.5 (-1-(1)) = 0
+
+Tercer Iteración
+^y_3 = fun_act( w * training_set[2][0] + 0 ) = -1 Incorrecto
+
+w = w + etha * (y_3 - ^y_3) * training_set[2][0] || w = [2,2.75]
+b = 0 + 0.5 (1-(-1)) = 1
+
+Cuarta Iteración
+^y_4 = fun_act( w * training_set[3][0] + 1 ) ||  = ^y_4 = -1 Correcto
+
+Quinta Iteración
+^y_1 = fun_act( w * training_set[0][0] + 1 ) ||  = ^y_1 = 1 Correcto
+
+Sexta Iteración
+^y_2 = fun_act( w * training_set[1][0] + 1 ) ||  = ^y_2 = -1 Incorrecto
+w = w + etha * (y_2 - ^y_2) * training_set[1][0] || w = [2.5,1.75]
+b = 1 + 0.5 (-1-(-1)) = 0
+
+Septima Iteración
+^y_3 = fun_act( w * training_set[2][0] + 0 ) ||  = ^y_3 = 1 Correto
+
+Octava Iteración
+^y_4 = fun_act( w * training_set[3][0] + 0 ) ||  = ^y_4 = -1 Correto
+
+Novena Iteración
+^y_1 = fun_act( w * training_set[0][0] + 0 ) ||  = ^y_1 = 1 Correto
+
+
+Decima Iteración
+^y_2 = fun_act( w * training_set[1][0] + 0 ) ||  = ^y_2 = 1 Incorrecto
+w = w + etha * (y_2 - ^y_2) * training_set[1][0] || w = [3,0.75]
+b = 0 + 0.5 ((-1) -(1)) = -1
+
+11 Iteración
+^y_3 = fun_act( w * training_set[2][0] + 0 ) ||  = ^y_3 = 1 Correcto
+
+12 Iteración
+^y_4 = fun_act( w * training_set[3][0] + 0 ) ||  = ^y_4 = -1 Correcto
+
+13 Iteración
+^y_1 = fun_act( w * training_set[0][0] + 0 ) ||  = ^y_1 =  1 Correcto
+
+14 Iteración
+^y_2 = fun_act( w * training_set[1][0] + 0 ) ||  = ^y_2 =  -1 Correcto
+
+15 Iteración
+^y_3 = fun_act( w * training_set[2][0] + 0 ) ||  = ^y_3 =  1 Correcto
+
+16 Iteración
+^y_4 = fun_act( w * training_set[3][0] + 0 ) ||  = ^y_4 =  -1 Correcto
+
+Convergencia
+
+
+
+
