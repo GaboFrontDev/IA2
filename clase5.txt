@@ -1,0 +1,52 @@
+peso = p_min + (p_max - p_min) * rand()
+alt = alt_min + (alt_max - alt_min) * rand()
+
+x = [peso, altura]
+y = peso/altura > 25
+
+La tarea es hacer que el perceptron logre discriminar 
+quien tiene sobre peso o no
+
+Teorema de Convergencia del perceptron:
+
+	Si C_1 y C_2 son 2 clases linealmente separables, entonces 
+	existe N tal que   para_todo_k(k>=N), el algoritmo del perceptron
+	asegura que w(k+1) = w(k)
+
+
+
+Pasos 
+Paso 1 se generan los datos
+Paso 2 se escala min - max
+
+resultado_x_i
+
+
+ADALINE (widrow, 1960)
+Adaptive linear estimator
+LMS algorithm
+Regla de Widrow - Hoff, Gradient Descent
+
+Widrow con los memsistores, siendo electrónico, trató de imitar la mente
+humana. Decidió quitar la función de activación y usar una función de activación
+lineal. La función de activación nos volvía la señal de manera "discreta" lo cual
+este cambio ya no lo hace. 
+Practicamente es hacer regresión linael buscando el menor error posible.
+el eror se calcula así:
+	E_1 realmente es una ecuación de costo
+	E_1 = 1/2m suma( y^(index)- resultado_y^(index),desde index = 1, hasta m )^2
+	E_2 = 1/2m suma( y^(index)- resultado_y^(index),desde index = 1, hasta m )^2
+
+	
+	para todas las w en vector_W
+	derivada_de_var_con_respecto_var(E_2, w_i) = (y-resultado_y)* (-x_i)
+	derivada_de_var_con_respecto_var(E_2, b) = -(y-resultado_y)
+
+	w_(k+1) =  w_(k+1) - etha(y-resultado_y)*vector_x
+	b_(k+1) = b_k - etha * derivada_de_var_con_respecto_var(E,b)
+	
+	resultado_y = w^T * x^(i) + b
+
+ecuacion de gradiente descendente:
+	w_(k+1) = w_k - etha * (gradiente del error)
+	b_(k+1) = b_k - etha * derivada_de_var_con_respecto_var(E,b)

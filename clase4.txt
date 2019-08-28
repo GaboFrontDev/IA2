@@ -19,7 +19,7 @@ test_set = [
 	[[2,1], 1]
 ]
 Primer Iteración
-^y_1 = fun_act( reduce(w)training_set[0][0] + 0 ) = -1 Incorrecto
+^y_1 = fun_act( reduce(w)training_set[0][0] + b ó 0 ) = -1 Incorrecto
 
 w = w + etha * (y_1 - ^y_1) * training_set[0][0]  || w = [-1.5, 2.75] 
 w = [-1.5, 2.75] 
