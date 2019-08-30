@@ -17,7 +17,7 @@ entradas = [
 D = [0, 1, 1, 1]
 
 umbral = 0
-etha = 0.1
+etha = 0.01
 peso1 = random.uniform(-1, 1)
 peso2 = random.uniform(-1, 1)
 print(peso1, peso2)
@@ -26,6 +26,9 @@ salidas = [0, 1, 1, 0]
 converge = False
 idx = 0
 pasos = 0
+for entrada, step in zip(entradas, D):
+    plt.scatter(entrada[0], entrada[1],
+                color="blue" if step else "red")
 while True in errors:  # until converge
     pasos += 1
     #prod_punto = np.dot([peso1, peso2], entradas[idx])
@@ -52,19 +55,20 @@ while True in errors:  # until converge
     if idx >= len(entradas):
         x1 = np.linspace(-3, 3, 20)
         x2 = (-peso1/peso2) * x1 - (umbral / peso2)
-        #graph = [[x, x*m+b]for x in np.linspace(-3, 3, 20)]
+        # graph = [[x, x*m+b]for x in np.linspace(-3, 3, 20)]
         print("salida: ", y)
         #print("linea: ", graph)
-        for entrada, step in zip(entradas, D):
-            plt.scatter(entrada[0], entrada[1],
-                        color="blue" if step else "red")
-
-        #plt.plot(x1, x2)
+        ln = plt.plot(x1, x2, color="red")
+        plt.pause(0.00005)
         idx = 0
+        ax = plt.gca()
+        del ax.lines[0]
 
 print("Entrenamiento terminado, se obtuvo: ", salidas)
 print("Cantidad de iteraciones: ", pasos)
+
+
 x1 = np.linspace(-3, 3, 20)
 x2 = (-peso1/peso2) * x1 - (umbral / peso2)
-plt.plot(x1, x2)
+plt.plot(x1, x2, color="green")
 plt.show()
