@@ -4,6 +4,9 @@ alt = alt_min + (alt_max - alt_min) * rand()
 x = [peso, altura]
 y = peso/altura > 25
 
+
+normalizacion = (x - min(x)) / max(x) - min(x)
+
 La tarea es hacer que el perceptron logre discriminar 
 quien tiene sobre peso o no
 
@@ -32,7 +35,7 @@ humana. Decidió quitar la función de activación y usar una función de activa
 lineal. La función de activación nos volvía la señal de manera "discreta" lo cual
 este cambio ya no lo hace. 
 Practicamente es hacer regresión linael buscando el menor error posible.
-el eror se calcula así:
+el error se calcula así:
 	E_1 realmente es una ecuación de costo
 	E_1 = 1/2m suma( y^(index)- resultado_y^(index),desde index = 1, hasta m )^2
 	E_2 = 1/2m suma( y^(index)- resultado_y^(index),desde index = 1, hasta m )^2

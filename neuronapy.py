@@ -31,7 +31,6 @@ for entrada, step in zip(entradas, D):
                 color="blue" if step else "red")
 while True in errors:  # until converge
     pasos += 1
-    #prod_punto = np.dot([peso1, peso2], entradas[idx])
     prod_punto = (entradas[idx][0]*peso1 + entradas[idx][1]*peso2) + umbral
     print(prod_punto)
     print("El resultado del producto punto es: ", prod_punto)
@@ -55,17 +54,12 @@ while True in errors:  # until converge
     if idx >= len(entradas):
         x1 = np.linspace(-3, 3, 20)
         x2 = (-peso1/peso2) * x1 - (umbral / peso2)
-        # graph = [[x, x*m+b]for x in np.linspace(-3, 3, 20)]
         print("salida: ", y)
-        #print("linea: ", graph)
         ln = plt.plot(x1, x2, color="red")
         plt.pause(0.00005)
         idx = 0
         ax = plt.gca()
         del ax.lines[0]
-
-print("Entrenamiento terminado, se obtuvo: ", salidas)
-print("Cantidad de iteraciones: ", pasos)
 
 
 x1 = np.linspace(-3, 3, 20)

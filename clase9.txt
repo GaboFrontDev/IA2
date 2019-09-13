@@ -1,0 +1,20 @@
+x = leer datos 
+[n,m] = size(x)
+
+x_est = zeros(n,1)
+
+p = 10
+
+w = zeros(2*p, 1)
+b = 0
+
+for i in range(n)[p+1:n] :
+	entrada = x[(i-p)p:i-i]
+	pred = w.T * entrada + b
+	e = x[i] - pred
+	x_est[i] = pred
+	w = w + eta*e*entrada
+	b = b + eta*e
+
+plot(x)
+plot(x-est)

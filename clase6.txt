@@ -1,0 +1,27 @@
+Descendiente gradiente
+w_(k+1) = w_k - eta * gradiente E
+
+gradiente E = [
+	dE/dw_1,
+	.
+	.
+	.,
+	dE/dw_n
+]
+
+MSE = 1/n sum((y[i] - result[i])^2 , i=1, n)
+SGD 
+w + eta*(y-result)*x
+b = b + eta*(y-result)
+
+result = ^y
+
+BGD
+w = w + n/m sum( (y[i] - result[i])*x[i]  , i=1, m)
+b = b + n/m sum( (y[i] - result[i]) , i=1, m)
+
+mini BDG
+toma paquetes de 10 puntos y hace BDG
+no se hará aquí
+
+Tarea: Hacer regresión lineal con Adaline
